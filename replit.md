@@ -56,6 +56,8 @@ EVLFRQ is a social platform designed for music producers. It allows users to sha
   - Removed AI Studio importmap from index.html
   - Added Vite entry point script
   - Set up static deployment configuration
+  - Added official EVLFRQ logos (white logo for dark theme, blue for favicon)
+  - Logos stored in public/assets/
 
 ## Running the Project
 
