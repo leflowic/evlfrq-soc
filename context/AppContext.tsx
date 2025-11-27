@@ -67,7 +67,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [view, setView] = useState<ViewState>(ViewState.LANDING);
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
   const [currentlyPlayingId, setCurrentlyPlayingId] = useState<string | null>(null);
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('sr');
   
   // Data for Admin (mock database)
   const [allUsers, setAllUsers] = useState<User[]>(MOCK_USERS);
