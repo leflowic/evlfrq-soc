@@ -64,7 +64,7 @@ export const Landing: React.FC = () => {
               {t('landing_version')}
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-6 leading-none">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9]">
               {t('landing_title_prefix')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
                 {t('landing_title_suffix')}
@@ -108,13 +108,13 @@ export const Landing: React.FC = () => {
               <div className="flex border-b border-white/5">
                 <button 
                   onClick={() => setAuthMode('login')}
-                  className={`flex-1 py-4 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${authMode === 'login' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
+                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'login' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
                 >
                   {t('landing_login')}
                 </button>
                 <button 
                   onClick={() => setAuthMode('signup')}
-                  className={`flex-1 py-4 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${authMode === 'signup' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
+                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'signup' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
                 >
                   {t('landing_signup')}
                 </button>
@@ -122,18 +122,18 @@ export const Landing: React.FC = () => {
 
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <h2 className="text-xl font-bold text-white mb-1">
+                  <h2 className="font-display text-2xl font-bold text-white mb-1">
                     {authMode === 'login' ? t('auth_welcome_back') : t('auth_join')}
                   </h2>
-                  <p className="text-slate-500 text-sm">
+                  <p className="text-slate-500 text-sm font-normal">
                     {authMode === 'login' ? 'Enter your credentials to continue' : 'Create your producer profile'}
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {authMode === 'signup' && (
-                    <div className="space-y-1">
-                      <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 pl-1">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-medium uppercase tracking-wide text-slate-400 pl-1">
                         Username
                       </label>
                       <div className="relative">
@@ -152,8 +152,8 @@ export const Landing: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 pl-1">Email</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-medium uppercase tracking-wide text-slate-400 pl-1">Email</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
                         <Mail size={16} />
@@ -169,8 +169,8 @@ export const Landing: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 pl-1">Password</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-medium uppercase tracking-wide text-slate-400 pl-1">Password</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
                         <Lock size={16} />
@@ -207,7 +207,7 @@ export const Landing: React.FC = () => {
                     type="submit" 
                     fullWidth 
                     size="lg" 
-                    className="mt-4 font-mono tracking-widest relative overflow-hidden group"
+                    className="mt-4 font-semibold tracking-wide relative overflow-hidden group"
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -227,8 +227,8 @@ export const Landing: React.FC = () => {
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-white/5"></div>
                   </div>
-                  <div className="relative flex justify-center text-[10px] uppercase font-mono tracking-widest">
-                    <span className="bg-[#09090b] px-2 text-slate-600">{t('auth_or')}</span>
+                  <div className="relative flex justify-center text-xs font-medium uppercase tracking-wide">
+                    <span className="bg-[#09090b] px-3 text-slate-500">{t('auth_or')}</span>
                   </div>
                 </div>
 
@@ -257,7 +257,7 @@ export const Landing: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 py-6 text-center text-slate-700 text-xs font-mono uppercase tracking-widest border-t border-white/5 bg-[#020202]">
+      <footer className="relative z-10 py-6 text-center text-slate-600 text-xs font-medium tracking-wide border-t border-white/5 bg-[#020202]">
         {t('landing_footer')}
       </footer>
     </div>

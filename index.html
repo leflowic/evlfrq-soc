@@ -8,14 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Poppins', 'sans-serif'],
               mono: ['"JetBrains Mono"', 'monospace'],
             },
             colors: {
@@ -70,10 +71,13 @@
       body {
         background-color: #09090b;
         color: #f8fafc;
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Inter', system-ui, sans-serif;
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
