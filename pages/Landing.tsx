@@ -27,11 +27,12 @@ export const Landing: React.FC = () => {
       </div>
 
       <nav className="relative z-10 flex justify-between items-center px-6 py-6 md:px-12 border-b border-white/5 bg-background/50 backdrop-blur-sm">
-        <div className="text-xl font-bold tracking-tighter flex items-center gap-2">
-            <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full" />
-            </div>
-            EVLFRQ
+        <div className="flex items-center">
+            <img 
+              src="/assets/logo-white.png" 
+              alt="EVLFRQ" 
+              className="h-10 w-auto"
+            />
         </div>
         <div className="space-x-4 flex items-center">
           <button 

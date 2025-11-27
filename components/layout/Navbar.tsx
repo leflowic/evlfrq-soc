@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Home, Compass, PlusSquare, Heart, User, Search, LogOut, MessageSquare, Activity, Mic2, Globe, Loader2, LayoutDashboard, Trophy, ShieldAlert, Settings, ChevronDown, Menu, X, AlertTriangle, CheckCircle, Info, Gamepad2 } from 'lucide-react';
+import { Home, Compass, PlusSquare, Heart, User, Search, LogOut, MessageSquare, Mic2, Globe, Loader2, LayoutDashboard, Trophy, ShieldAlert, Settings, ChevronDown, Menu, X, AlertTriangle, CheckCircle, Info, Gamepad2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { ViewState } from '../../types';
 import { VerificationBadge } from '../ui/VerificationBadge';
@@ -109,15 +109,14 @@ export const Navbar: React.FC = () => {
         {/* Left: Logo & Main Links */}
         <div className="flex items-center space-x-8">
             <div 
-              className="flex items-center space-x-2 cursor-pointer group select-none"
+              className="flex items-center cursor-pointer group select-none"
               onClick={() => handleNavigation(ViewState.FEED)}
             >
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.3)] group-hover:bg-blue-500 transition-colors">
-                <Activity size={18} className="text-white" />
-              </div>
-              <span className="text-lg font-black tracking-tighter text-white">
-                EVL<span className="text-blue-500">FRQ</span>
-              </span>
+              <img 
+                src="/assets/logo-white.png" 
+                alt="EVLFRQ" 
+                className="h-10 w-auto group-hover:opacity-80 transition-opacity"
+              />
             </div>
 
             <div className="h-6 w-px bg-white/10"></div>
@@ -212,11 +211,12 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Top Bar */}
       <div className={`fixed ${systemMessage ? 'top-8' : 'top-0'} inset-x-0 z-50 bg-[#09090b]/95 border-b border-white/10 h-16 flex md:hidden items-center justify-between px-4 backdrop-blur-md transition-all`}>
-         <div className="flex items-center space-x-2" onClick={() => handleNavigation(ViewState.FEED)}>
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-               <Activity size={18} className="text-white" />
-            </div>
-            <span className="text-lg font-black text-white tracking-tight">EVL<span className="text-blue-500">FRQ</span></span>
+         <div className="flex items-center" onClick={() => handleNavigation(ViewState.FEED)}>
+            <img 
+              src="/assets/logo-white.png" 
+              alt="EVLFRQ" 
+              className="h-8 w-auto"
+            />
          </div>
          <div className="flex items-center space-x-4">
             <button onClick={() => handleNavigation(ViewState.UPLOAD)} className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black">
