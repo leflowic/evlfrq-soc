@@ -41,7 +41,7 @@ export const Landing: React.FC = () => {
             <img 
               src="/assets/logo-blue.png" 
               alt="EVLFRQ" 
-              className="h-6 w-6"
+              className="h-10 w-10"
             />
             <span>EVL<span style={{color: '#4542f5'}}>FRQ</span></span>
           </span>
@@ -186,11 +186,11 @@ export const Landing: React.FC = () => {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
                         <img 
                           src="/assets/logo-blue.png" 
                           alt="EVLFRQ" 
-                          className="h-10 w-10"
+                          className="h-16 w-16"
                         />
                       </div>
                       <h2 className="font-display text-2xl font-bold mb-2">
