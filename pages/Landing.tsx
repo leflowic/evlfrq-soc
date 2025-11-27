@@ -29,23 +29,21 @@ export const Landing: React.FC = () => {
     <div className="min-h-screen bg-[#030508] text-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-cyan-500/8 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full blur-[120px]" style={{backgroundColor: 'rgba(69, 66, 245, 0.08)'}}></div>
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-600/8 rounded-full blur-[120px]"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-cyan-500/5 to-transparent rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full" style={{background: 'radial-gradient(circle, rgba(69, 66, 245, 0.05), transparent)'}}></div>
       </div>
 
       {/* Navigation */}
       <nav className="relative z-20 flex justify-between items-center px-6 lg:px-16 py-5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/25">
+          <span className="font-display font-bold text-xl tracking-tight flex items-center gap-2">
             <img 
               src="/assets/logo-blue.png" 
               alt="EVLFRQ" 
-              className="h-6 w-6 brightness-0 invert"
+              className="h-6 w-6"
             />
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight hidden sm:block">
-            EVL<span className="text-cyan-400">FRQ</span>
+            <span>EVL<span style={{color: '#4542f5'}}>FRQ</span></span>
           </span>
         </div>
         
@@ -66,16 +64,16 @@ export const Landing: React.FC = () => {
           {/* Left Column - Hero */}
           <div className="lg:py-16">
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
-              <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-              <span className="text-sm font-medium text-cyan-400">{t('landing_version')}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{backgroundColor: 'rgba(69, 66, 245, 0.1)', borderColor: 'rgba(69, 66, 245, 0.2)', borderWidth: '1px'}}>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{backgroundColor: '#4542f5'}}></span>
+              <span className="text-sm font-medium" style={{color: '#4542f5'}}>{t('landing_version')}</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
               Tvoja muzika.
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-400">
+              <span className="text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(to right, #4542f5, #6558f0, #a78bfa)'}}>
                 Tvoja zajednica.
               </span>
             </h1>
@@ -89,7 +87,7 @@ export const Landing: React.FC = () => {
             <div className="flex flex-wrap gap-8 mb-10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
-                  <Users size={20} className="text-cyan-400" />
+                  <Users size={20} style={{color: '#4542f5'}} />
                 </div>
                 <div>
                   <div className="text-xl font-bold">10K+</div>
@@ -119,7 +117,7 @@ export const Landing: React.FC = () => {
             {/* Feature List */}
             <div className="flex flex-wrap gap-3 mb-8">
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/5">
-                <Play size={16} className="text-cyan-400" />
+                <Play size={16} style={{color: '#4542f5'}} />
                 <span className="text-sm text-slate-300">Waveform Streaming</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/5">
@@ -138,7 +136,7 @@ export const Landing: React.FC = () => {
                 {[64, 65, 91, 103, 338].map((id, i) => (
                   <img
                     key={i}
-                    src={`https://picsum.photos/id/${id}/200/200`}
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${id}`}
                     alt="User"
                     className="w-10 h-10 rounded-full border-2 border-[#030508] object-cover"
                   />
@@ -156,7 +154,7 @@ export const Landing: React.FC = () => {
               {/* Auth Card */}
               <div className="relative">
                 {/* Glow Effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-50"></div>
+                <div className="absolute -inset-1 rounded-3xl blur-xl opacity-50" style={{background: 'linear-gradient(to right, rgba(69, 66, 245, 0.2), rgba(147, 51, 234, 0.2)'}}></div>
                 
                 <div className="relative bg-[#0a0d12]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
                   {/* Tab Switcher */}
@@ -165,9 +163,10 @@ export const Landing: React.FC = () => {
                       onClick={() => setAuthMode('login')}
                       className={`flex-1 py-4 text-sm font-medium transition-all ${
                         authMode === 'login' 
-                          ? 'text-white bg-white/5 border-b-2 border-cyan-400' 
+                          ? 'text-white bg-white/5' 
                           : 'text-slate-500 hover:text-slate-300'
                       }`}
+                      style={authMode === 'login' ? {borderBottomWidth: '2px', borderBottomColor: '#4542f5'} : {}}
                     >
                       {t('landing_login')}
                     </button>
@@ -175,9 +174,10 @@ export const Landing: React.FC = () => {
                       onClick={() => setAuthMode('signup')}
                       className={`flex-1 py-4 text-sm font-medium transition-all ${
                         authMode === 'signup' 
-                          ? 'text-white bg-white/5 border-b-2 border-cyan-400' 
+                          ? 'text-white bg-white/5' 
                           : 'text-slate-500 hover:text-slate-300'
                       }`}
+                      style={authMode === 'signup' ? {borderBottomWidth: '2px', borderBottomColor: '#4542f5'} : {}}
                     >
                       {t('landing_signup')}
                     </button>
@@ -186,11 +186,11 @@ export const Landing: React.FC = () => {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/20 flex items-center justify-center">
+                      <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                         <img 
                           src="/assets/logo-blue.png" 
                           alt="EVLFRQ" 
-                          className="h-8 w-8"
+                          className="h-10 w-10"
                         />
                       </div>
                       <h2 className="font-display text-2xl font-bold mb-2">
@@ -213,7 +213,10 @@ export const Landing: React.FC = () => {
                               placeholder={t('auth_username_placeholder')}
                               value={formData.username}
                               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                              className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/25 transition-all"
+                              className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all"
+                              style={{
+                                ':focus': {borderColor: 'rgba(69, 66, 245, 0.5)', boxShadow: 'inset 0 0 0 1px rgba(69, 66, 245, 0.25)'}
+                              }}
                               required
                             />
                           </div>
@@ -229,7 +232,7 @@ export const Landing: React.FC = () => {
                             placeholder={t('auth_email_placeholder')}
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/25 transition-all"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all"
                             required
                           />
                         </div>
@@ -244,7 +247,7 @@ export const Landing: React.FC = () => {
                             placeholder={t('auth_password_placeholder')}
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                            className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-12 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/25 transition-all"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-12 text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all"
                             required
                           />
                           <button
@@ -260,10 +263,10 @@ export const Landing: React.FC = () => {
                       {authMode === 'login' && (
                         <div className="flex items-center justify-between">
                           <label className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" className="w-4 h-4 rounded bg-white/5 border-white/20 text-cyan-500 focus:ring-cyan-500/25" />
+                            <input type="checkbox" className="w-4 h-4 rounded bg-white/5 border-white/20" style={{accentColor: '#4542f5'}} />
                             <span className="text-sm text-slate-400">{t('auth_remember')}</span>
                           </label>
-                          <a href="#" className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+                          <a href="#" className="text-sm transition-colors" style={{color: '#4542f5'}}>
                             {t('auth_forgot')}
                           </a>
                         </div>
@@ -272,7 +275,8 @@ export const Landing: React.FC = () => {
                       <button 
                         type="submit" 
                         disabled={isLoading}
-                        className="w-full py-3.5 px-6 bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-black font-semibold rounded-xl shadow-lg shadow-cyan-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-3.5 px-6 text-black font-semibold rounded-xl shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        style={{background: 'linear-gradient(to right, #4542f5, #5a52dd)', boxShadow: 'inset 0 0 24px rgba(69, 66, 245, 0.25)'}}
                       >
                         {isLoading ? (
                           <span className="flex items-center justify-center gap-2">
