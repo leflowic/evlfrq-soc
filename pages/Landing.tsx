@@ -36,18 +36,21 @@ export const Landing: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 flex justify-between items-center px-6 py-6 md:px-12 border-b border-white/5 bg-background/50 backdrop-blur-sm">
-        <div className="flex items-center">
+      <nav className="relative z-10 flex justify-between items-center px-6 py-4 md:px-12 border-b border-white/5 bg-background/50 backdrop-blur-sm">
+        <div className="flex items-center gap-3">
           <img 
-            src="/assets/logo-white.png" 
+            src="/assets/logo-blue.png" 
             alt="EVLFRQ" 
-            className="h-10 w-auto"
+            className="h-10 w-10"
           />
+          <span className="font-display font-bold text-xl tracking-tight">
+            EVL<span className="text-blue-500">FRQ</span>
+          </span>
         </div>
         <div className="flex items-center">
           <button 
             onClick={() => setLanguage(language === 'en' ? 'sr' : 'en')}
-            className="text-xs font-mono font-bold text-slate-400 border border-slate-700 rounded px-2 py-1 hover:text-white transition-colors"
+            className="text-xs font-semibold text-slate-400 border border-slate-700 rounded px-2.5 py-1.5 hover:text-white hover:border-slate-500 transition-colors"
           >
             {language.toUpperCase()}
           </button>
@@ -59,9 +62,19 @@ export const Landing: React.FC = () => {
         {/* Left Side - Hero Content */}
         <div className="flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-12 lg:py-0">
           <div className="max-w-xl">
-            <div className="inline-flex items-center px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 backdrop-blur-md text-xs font-mono text-blue-400 mb-8">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-              {t('landing_version')}
+            {/* Large Logo */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center shadow-lg shadow-blue-500/10">
+                <img 
+                  src="/assets/logo-blue.png" 
+                  alt="EVLFRQ" 
+                  className="h-10 w-10 md:h-12 md:w-12"
+                />
+              </div>
+              <div className="inline-flex items-center px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 backdrop-blur-md text-xs font-mono text-blue-400">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                {t('landing_version')}
+              </div>
             </div>
             
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9]">
@@ -122,11 +135,20 @@ export const Landing: React.FC = () => {
 
               <div className="p-8">
                 <div className="text-center mb-6">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center">
+                      <img 
+                        src="/assets/logo-blue.png" 
+                        alt="EVLFRQ" 
+                        className="h-8 w-8"
+                      />
+                    </div>
+                  </div>
                   <h2 className="font-display text-2xl font-bold text-white mb-1">
                     {authMode === 'login' ? t('auth_welcome_back') : t('auth_join')}
                   </h2>
                   <p className="text-slate-500 text-sm font-normal">
-                    {authMode === 'login' ? 'Enter your credentials to continue' : 'Create your producer profile'}
+                    {authMode === 'login' ? 'Uloguj se da nastaviš' : 'Napravi svoj producer profil'}
                   </p>
                 </div>
 
