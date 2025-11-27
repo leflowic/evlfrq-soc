@@ -30,7 +30,7 @@ export const Landing: React.FC = () => {
     <div className="min-h-screen bg-background text-white flex flex-col relative overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-900/10 rounded-full blur-[150px] animate-pulse-slow"></div>
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-cyan-900/10 rounded-full blur-[150px] animate-pulse-slow"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-900/10 rounded-full blur-[150px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]"></div>
       </div>
@@ -44,7 +44,7 @@ export const Landing: React.FC = () => {
             className="h-10 w-10"
           />
           <span className="font-display font-bold text-xl tracking-tight">
-            EVL<span className="text-blue-500">FRQ</span>
+            EVL<span className="text-cyan-400">FRQ</span>
           </span>
         </div>
         <div className="flex items-center">
@@ -64,22 +64,22 @@ export const Landing: React.FC = () => {
           <div className="max-w-xl">
             {/* Large Logo */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center shadow-lg shadow-blue-500/10">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/20 flex items-center justify-center shadow-lg shadow-cyan-500/10">
                 <img 
                   src="/assets/logo-blue.png" 
                   alt="EVLFRQ" 
                   className="h-10 w-10 md:h-12 md:w-12"
                 />
               </div>
-              <div className="inline-flex items-center px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 backdrop-blur-md text-xs font-mono text-blue-400">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+              <div className="inline-flex items-center px-3 py-1 rounded-full border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-md text-xs font-mono text-cyan-400">
+                <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></span>
                 {t('landing_version')}
               </div>
             </div>
             
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9]">
               {t('landing_title_prefix')} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
                 {t('landing_title_suffix')}
               </span>
             </h1>
@@ -91,7 +91,7 @@ export const Landing: React.FC = () => {
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-3">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                <Activity size={16} className="text-blue-500" />
+                <Activity size={16} className="text-cyan-400" />
                 <span className="text-sm text-slate-400">{t('landing_feature_1_title')}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
@@ -121,13 +121,13 @@ export const Landing: React.FC = () => {
               <div className="flex border-b border-white/5">
                 <button 
                   onClick={() => setAuthMode('login')}
-                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'login' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
+                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'login' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#00D4FF]' : 'text-slate-500 hover:text-slate-300'}`}
                 >
                   {t('landing_login')}
                 </button>
                 <button 
                   onClick={() => setAuthMode('signup')}
-                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'signup' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#3b82f6]' : 'text-slate-500 hover:text-slate-300'}`}
+                  className={`flex-1 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${authMode === 'signup' ? 'text-white bg-white/5 shadow-[inset_0_-2px_0_0_#00D4FF]' : 'text-slate-500 hover:text-slate-300'}`}
                 >
                   {t('landing_signup')}
                 </button>
@@ -136,7 +136,7 @@ export const Landing: React.FC = () => {
               <div className="p-8">
                 <div className="text-center mb-6">
                   <div className="flex justify-center mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/20 flex items-center justify-center">
                       <img 
                         src="/assets/logo-blue.png" 
                         alt="EVLFRQ" 
@@ -167,7 +167,7 @@ export const Landing: React.FC = () => {
                           placeholder={t('auth_username_placeholder')}
                           value={formData.username}
                           onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                          className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-slate-600"
+                          className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors placeholder:text-slate-600"
                           required
                         />
                       </div>
@@ -185,7 +185,7 @@ export const Landing: React.FC = () => {
                         placeholder={t('auth_email_placeholder')}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-slate-600"
+                        className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors placeholder:text-slate-600"
                         required
                       />
                     </div>
@@ -202,7 +202,7 @@ export const Landing: React.FC = () => {
                         placeholder={t('auth_password_placeholder')}
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                        className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-12 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-slate-600"
+                        className="w-full bg-[#050505] border border-white/10 rounded-lg py-3 pl-10 pr-12 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors placeholder:text-slate-600"
                         required
                       />
                       <button
@@ -218,10 +218,10 @@ export const Landing: React.FC = () => {
                   {authMode === 'login' && (
                     <div className="flex items-center justify-between pt-1">
                       <label className="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" className="w-4 h-4 rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-blue-500/50" />
+                        <input type="checkbox" className="w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/50" />
                         <span className="text-xs text-slate-400">{t('auth_remember')}</span>
                       </label>
-                      <a href="#" className="text-xs text-blue-500 hover:text-blue-400 transition-colors">{t('auth_forgot')}</a>
+                      <a href="#" className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">{t('auth_forgot')}</a>
                     </div>
                   )}
 
